@@ -22,6 +22,7 @@ hold on
 %%
 hold on
 axis equal
+
 load EM_InData.mat
 
 Data=table2array(Data);
@@ -34,13 +35,13 @@ load EM_OutData.mat
 
 Data2=table2array(Data2);
 
-% scatter3(Data2(:,1),Data2(:,2),Data2(:,3));
+scatter3(Data2(:,1),Data2(:,2),Data2(:,3));
 
-for i=1:100:length(Data)
+for i=1:100:length(Data2)
 
-    position = Data(i, 1:3);
+    position = Data2(i, 1:3);
 
-    q=quaternion(Data(i,4:7));
+    q=quaternion(Data2(i,4:7));
     
     rotMatrix = 3*rotmat(q, 'frame');
 
