@@ -1,33 +1,34 @@
-% Parameters for the cylinder
-radius = 1;
-height = 5;
-num_points = 1000;
+% Create a new figure
+figure;
 
-% Generate random points on the surface of a cylinder
-theta = 2 * pi * rand(num_points, 1);
-z = height * rand(num_points, 1);
-x = radius * cos(theta);
-y = radius * sin(theta);
-points = [x, y, z];
-
-% Compute Delaunay triangulation
-DT = delaunayTriangulation(points);
-
-% Plot the cylinder points
-scatter3(points(:,1), points(:,2), points(:,3), '.');
-hold on;
-
-% Compute and plot the Voronoi diagram based on the triangulation
-[V, r] = voronoiDiagram(DT);
-for i = 1:numel(r)
-    if all(r{i} ~= 1)   % Exclude cells that are unbounded
-        patch(V(r{i},1), V(r{i},2), V(r{i},3), 'g', 'FaceAlpha', 0.3);
-    end
-end
-
+% Create a 3D axis
+axis equal;
+grid on;
 xlabel('X');
 ylabel('Y');
 zlabel('Z');
-axis equal;
-grid on;
-title('Voronoi Diagram of a 3D Cylinder');
+hold on;
+
+
+% Define the position
+position = [1.62, -162.32, -160.93];
+
+% Plot the position using a red 'o' marker
+plot3(position(1), position(2), position(3), 'ro');
+
+% Assuming you have the Aerospace Toolbox
+q = quaternion(0.7694, -0.3945, 0.3493, 0.361);
+rotMatrix = rotmat(q, 'frame');
+
+scale = 10;  % adjust for desired axis length
+
+% Define the basic unit vectors for X, Y, and Z
+unitVectors = eye(3);
+
+% Rotate and scale these unit vectors
+rotatedVectors = scale * (rotMatrix * unitVectors')';
+
+% Plot each axis
+quiver3(position(1), position(2), position(3), rotatedVectors(1, 1), rotatedVectors(1, 2), rotatedVectors(1, 3), 'r', 'AutoScale', 'off'); % X-axis in red
+quiver3(position(1), position(2), position(3), rotatedVectors(2, 1), rotatedVectors(2, 2), rotatedVectors(2, 3), 'g', 'AutoScale', 'off'); % Y-axis in green
+quiver3(position(1), position(2), position(3), rotatedVectors(3, 1), rotatedVectors(3, 2), rotatedVectors(3, 3), 'b', 'AutoScale', 'off'); % Z-axis in blue
