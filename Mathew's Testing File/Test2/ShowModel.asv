@@ -1,0 +1,35 @@
+clc;
+clear;
+close all; 
+%%
+load Mesh_Soft_EM_Mod_0601.mat;
+
+a=ver;
+FV.vertices = a;
+
+FV.faces = tri;
+
+figure(1);
+
+% patch(FV,'facecolor',[1 0 0],'facealpha',0.8,'edgecolor','none');
+patch(FV,'facecolor',[1 0 0],'facealpha',0.6,'edgecolor','none');
+view(3)
+camlight
+axis equal;
+
+%% Sectioning
+
+verSize=size(ver)
+
+blue=[0 0 1]
+black=[0 0 0]
+
+colour=zeros()
+
+for i=1:verSize(1,1)
+    if i<100000
+        colour(i,:)=blue
+    end
+end
+
+patch(FV)
