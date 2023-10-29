@@ -26,7 +26,7 @@ load EM_InData.mat
 
 Data=table2array(Data);
 
-scatter3(Data(:,1),Data(:,2),Data(:,3),'ob');
+scatter3(Data(:,1),Data(:,2),Data(:,3),'o','blue');
 
 % end
 
@@ -36,7 +36,7 @@ Data2=table2array(Data2);
 
 % scatter3(Data2(:,1),Data2(:,2),Data2(:,3));
 
-for i=1:20:length(Data)
+for i=1:100:length(Data)
 
     position = Data(i, 1:3);
 

@@ -36,7 +36,7 @@ Data2=table2array(Data2);
 
 % scatter3(Data2(:,1),Data2(:,2),Data2(:,3));
 
-for i=1:20:length(Data)
+for i=1:100:length(Data)
 
     position = Data(i, 1:3);
 
