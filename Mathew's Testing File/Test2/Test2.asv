@@ -1,8 +1,0 @@
-
-load Mesh_Soft_EM_Mod_0601.mat;
-
-a=ver;
-FV.vertices = a;
-
-FV.faces = tri;
-patchHandle = patch(ver(, Y, Z, 'FaceColor', 'g');

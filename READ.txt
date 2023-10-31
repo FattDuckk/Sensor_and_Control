@@ -1,0 +1,4 @@
+There are two solutions that have been made for this project, one is through the use of the given 3D model and the second utilises the ultrasound images. Both solutions can be used separately or combined to reach the same result where the robotic catheter will not navigate into the aortic vessel walls.
+
+ModelTrendlineProcessing by Minh Nguyen 13582453
+UltrasoundImageProcessing by Pei-i Althea Trieu 13886953
