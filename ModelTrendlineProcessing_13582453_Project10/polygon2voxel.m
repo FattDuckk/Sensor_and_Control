@@ -1,5 +1,7 @@
 function Volume=polygon2voxel(FV,VolumeSize,mode,Yxz)
-           
+
+    if(nargin<4), Yxz=true; end
+        
     % Check VolumeSize size
     if(length(VolumeSize)==1)
         VolumeSize=[VolumeSize VolumeSize VolumeSize];
