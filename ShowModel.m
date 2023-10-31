@@ -25,9 +25,9 @@ axis equal
 
 load EM_InData.mat
 
-Data=table2array(Data);
+% Data=table2array(Data);
 
-scatter3(Data(:,1),Data(:,2),Data(:,3),'o','blue');
+% scatter3(Data(:,1),Data(:,2),Data(:,3),'o','blue');
 
 % end
 
