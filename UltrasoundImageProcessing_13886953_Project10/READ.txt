@@ -1,0 +1,3 @@
+The main script is called UltrasoundImageProcessing.
+The processed ultrasound images are from the phantom data set 
+emailed to students doing Project 10.
